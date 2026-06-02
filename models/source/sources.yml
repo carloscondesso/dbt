@@ -5,10 +5,10 @@ sources:
     database: dbt_tutorial_dev
     schema: source
     tables:
-      -name: fact_sales
-      -name: fact_returns
-      -name: dim_date
-      -name: dim_store
-      -name: dim_product
-      -name: dim_customer
+      - name: fact_sales
+      - name: fact_returns
+      - name: dim_date
+      - name: dim_store
+      - name: dim_product
+      - name: dim_customer
       
