@@ -11,11 +11,11 @@ profile: 'carlos_dbt_sentiment'
 # The 'model-path' config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
 model-paths: ["models"]
-analysis_paths: ["analysis"]
+analysis-paths: ["analyses"]
+snapshot-paths: ["snapshots"]
 test-paths: ["tests"]
 seed-paths: ["seeds"]
 macro-paths: ["macros"]
-snapshots-paths: ["snapshots"]
 
 clean-targets:             # directories to be removed by "dbt clean"
  - "target"
