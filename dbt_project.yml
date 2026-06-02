@@ -31,4 +31,5 @@ clean-targets:             # directories to be removed by "dbt clean"
 models:
   master_class:
     # Config indicated by + and applies to all files under models/example/
-    +materialized: view
+    bronze:
+      +materialized: table
