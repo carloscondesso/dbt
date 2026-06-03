@@ -15,7 +15,13 @@ models:
         data_tests:
           - unique
           - not_null
-  
+
+  - name: bronze_returns
+    columns:
+      - name: returned_qty
+        data_tests:
+          - generic_non_negative
+
   - name: bronze_store
     columns:
       - name: store_sk
