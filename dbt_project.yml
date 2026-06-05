@@ -44,4 +44,4 @@ models:
 seeds:
   master_class:
     +schema: bronze
-    
+ 
