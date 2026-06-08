@@ -1,25 +1,27 @@
 # Name your project! Project names should contain only lowercase characters
-# and undersores. A good package name should reflect your organization's
+# and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
 name: 'master_class'
 version: '1.0.0'
 
+config-version: 2
+
 # This setting configures which "profile" dbt uses for this project
-profile: 'carlos_dbt_sentiment'
+profile: 'master_class'
 
 # These configurations specify where dbt should look for different types of files.
 # The 'model-path' config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
 model-paths: ["models"]
-analysis_paths: ["analysis"]
+analysis-paths: ["analyses"]
 test-paths: ["tests"]
 seed-paths: ["seeds"]
 macro-paths: ["macros"]
-snapshots-paths: ["snapshots"]
+snapshot-paths: ["snapshots"]
 
 clean-targets:             # directories to be removed by "dbt clean"
- - "target"
- - "dbt_packages"
+  - "target"
+  - "dbt_packages"
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
@@ -31,4 +33,16 @@ clean-targets:             # directories to be removed by "dbt clean"
 models:
   master_class:
     # Config indicated by + and applies to all files under models/example/
-    +materialized: view
+    bronze:
+      +materialized: table
+      +schema: bronze
+    silver:
+      +materialized: table
+      +schema: silver
+    gold:
+      +materialized: table
+      +schema: gold
+
+seeds:
+  master_class:
+    +schema: bronze
